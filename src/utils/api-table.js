@@ -1,8 +1,7 @@
+import axios from "axios";
 // Empty array to store result objects from API call
-var resultsArray = [];
 
-const searchButton = document.getElementById("search-button");
-searchButton.onclick(getTableData);
+var resultsArray = [];
 
 function getTableData() {
   const options = {
@@ -42,7 +41,7 @@ function getTableData() {
     .catch(function (error) {
       console.error(error);
     });
-  
-
+  return resultsArray;
 }
-// export default apiTable;
+
+export default getTableData;
