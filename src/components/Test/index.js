@@ -32,9 +32,10 @@ const Test = () => {
       {data.map((item) => {
         return (
           <div>
-            <div>
-              <h2>{item.name}</h2>
+            <div key={item.team.id}>
               <p>{item.goalsDiff}</p>
+              <p>{item.team.name}</p>
+              <img src={item.team.logo} alt="logo" />
             </div>
           </div>
         );
