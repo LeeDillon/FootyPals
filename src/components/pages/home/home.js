@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../../navbar/navbar";
-import Test from "../../Test";
+import DynamicTable from "../../table/table";
 
 const home = () => {
   return (
     <>
-      <Test />
       <Navbar />
+      <DynamicTable />
     </>
   );
 };
