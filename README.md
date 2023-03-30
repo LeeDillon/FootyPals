@@ -6,8 +6,6 @@
   Premier League in one place
   
   
-  
-  
   ## Table of Contents
   * [Description](#description)
   * [View Project](#viewproject)
@@ -24,26 +22,24 @@
   ![Final-Project-FootyPal](https://user-images.githubusercontent.com/119621308/228793614-ffa23cf9-22ab-4fd6-8e00-e04def817817.png)
   
   
-  
   ## Demo
   
-  
-  https://user-images.githubusercontent.com/119621308/228814116-0b4505d9-4934-4a04-84b5-da0a4e7f66b7.mp4
-
+  https://user-images.githubusercontent.com/119621308/228931717-8e230544-33fb-4d95-a400-bb7b08184c5c.mp4
 
 
   ## Installation
   None
   
+  
   ## Usage
   
   #### As a user
 
-    - I want to be able to view live scores of football matches so that I can keep track of my favourite teams and stay up-to-date on the latest games.
+  - I want to be able to view live scores of football matches so that I can keep track of my favourite teams and stay up-to-date on the latest games.
 
-    - I also want to be able to select my favourite teams and be able to view the score, win, or lose.
+  - I also want to be able to select my favourite teams and be able to view the score, win, or lose.
 
-    - Additionally, I would like to be able to view detailed statistics and match reports, as well as team and player profiles, to help me better     understand the performance of my favourite teams and players.
+  - Additionally, I would like to be able to view detailed statistics and match reports, as well as team and player profiles, to help me better understand the performance of my favourite teams and players.
 
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
