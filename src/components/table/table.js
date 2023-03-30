@@ -56,50 +56,91 @@ export default function DynamicTable() {
           </Typography>
         </Box>
         <Relegation />
-        <TableContainer component={Paper} sx={containerStyles}>
-          <Table aria-label="simple table" stickyHeader>
-            <TableHead>
-              <TableRow sx={{ fontWeight: "600" }}>
-                <TableCell></TableCell>
-                <TableCell>Team</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>P</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>W</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>D</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>L</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>GD</TableCell>
-                <TableCell sx={{ paddingLeft: 0 }}>Pts</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {data.map((item) => (
-                <TableRow key={item.team.id}>
-                  <TableCell align="center">
-                    <img src={item.team.logo} width={30} alt="logo" />{" "}
-                  </TableCell>
-                  <TableCell align="left">{item.team.name}</TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.all.played}
-                  </TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.all.win}
-                  </TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.all.draw}
-                  </TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.all.lose}
-                  </TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.goalsDiff}
-                  </TableCell>
-                  <TableCell align="left" sx={{ paddingLeft: 0 }}>
-                    {item.points}
-                  </TableCell>
+        <Paper elevation={24}>
+          <TableContainer component={Paper} sx={containerStyles}>
+            <Table aria-label="simple table" stickyHeader>
+              <TableHead>
+                <TableRow sx={{ fontWeight: "600" }}>
+                  <TableCell></TableCell>
+                  <TableCell>Team</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>P</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>W</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>D</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>L</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>GD</TableCell>
+                  <TableCell sx={{ paddingLeft: 0 }}>Pts</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {data.map((item, index) => (
+                  <TableRow key={item.team.id}>
+                    <TableCell align="center">
+                      {/* ----------- Picks out the first 4 indexes ---------- */}
+                      {index < 4 && (
+                        <Box
+                          sx={{
+                            position: "relative",
+                            left: ["-20px", "-40px", "-66px", "-80px"],
+                            width: "8px",
+                            height: "30px",
+                            backgroundColor: "#0ead69",
+                            display: "inline-block",
+                          }}
+                        />
+                      )}
+                      {/* ----------- Picks out the 5th indexes ---------- */}
+                      {index === 4 && (
+                        <Box
+                          sx={{
+                            position: "relative",
+                            left: ["-20px", "-40px", "-66px", "-80px"],
+                            width: "8px",
+                            height: "30px",
+                            backgroundColor: "#ffd23f",
+                            display: "inline-block",
+                          }}
+                        />
+                      )}
+                      {/* ----------- Picks out the last 3 indexes ---------- */}
+                      {index >= data.length - 3 && (
+                        <Box
+                          sx={{
+                            position: "relative",
+                            left: ["-20px", "-40px", "-66px", "-80px"],
+                            width: "8px",
+                            height: "30px",
+                            backgroundColor: "#ee4266",
+                            display: "inline-block",
+                          }}
+                        />
+                      )}
+                      <img src={item.team.logo} width={30} alt="logo" />
+                    </TableCell>
+                    <TableCell align="left">{item.team.name}</TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.all.played}
+                    </TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.all.win}
+                    </TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.all.draw}
+                    </TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.all.lose}
+                    </TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.goalsDiff}
+                    </TableCell>
+                    <TableCell align="left" sx={{ paddingLeft: 0 }}>
+                      {item.points}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Paper>
       </Container>
       <style>
         {`

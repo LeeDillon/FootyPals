@@ -34,7 +34,6 @@ export default function Fixture() {
       });
   }, []);
 
-
   const PlTableStyles = {
     fontWeight: "500",
     color: "#22577a",
@@ -50,13 +49,12 @@ export default function Fixture() {
     paddingBottom: 0,
     fontWeight: "600",
   };
-  
+
   const timeStyle = {
     paddingTop: 0,
     fontWeight: "600",
   };
-  
- 
+
   return (
     <Container>
       {/* ------------------ header ------------------ */}
@@ -65,46 +63,48 @@ export default function Fixture() {
           Upcoming Fixtures
         </Typography>
       </Box>
-      <TableContainer component={Paper} sx={containerStyles}>
-        <Table aria-label="simple table" stickyHeader>
-          <TableBody>
-            {data.map((item) => (
-              <React.Fragment key={item.teams.id}>
-                <TableRow>
-                  <TableCell colSpan={6} align="center" sx={dateStyle}>
-                    {new Date(item.fixture.date).toLocaleString("en-GB", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell align="right" sx={{ fontSize: "1rem" }}>
-                    {item.teams.home.name}
-                  </TableCell>
-                  <TableCell align="left">
-                    <img src={item.teams.home.logo} width={36} alt="logo" />{" "}
-                  </TableCell>
-                  <TableCell align="center" sx={timeStyle}>
-                    {new Date(item.fixture.date).toLocaleString("en-GB", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: false,
-                    })}
-                  </TableCell>
-                  <TableCell align="right">
-                    <img src={item.teams.away.logo} width={30} alt="logo" />{" "}
-                  </TableCell>
-                  <TableCell align="left" sx={{ fontSize: "1rem" }}>
-                    {item.teams.away.name}
-                  </TableCell>
-                </TableRow>
-              </React.Fragment>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Paper elevation={24}>
+        <TableContainer component={Paper} sx={containerStyles}>
+          <Table aria-label="simple table" stickyHeader>
+            <TableBody>
+              {data.map((item) => (
+                <React.Fragment key={item.teams.id}>
+                  <TableRow>
+                    <TableCell colSpan={6} align="center" sx={dateStyle}>
+                      {new Date(item.fixture.date).toLocaleString("en-GB", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell align="right" sx={{ fontSize: "1rem", pt: "0px" }}>
+                      {item.teams.home.name}
+                    </TableCell>
+                    <TableCell align="left" sx={{ pt: "0px" }}>
+                      <img src={item.teams.home.logo} width={36} alt="logo" />{" "}
+                    </TableCell>
+                    <TableCell align="center" sx={timeStyle}>
+                      {new Date(item.fixture.date).toLocaleString("en-GB", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: false,
+                      })}
+                    </TableCell>
+                    <TableCell align="right" sx={{ pt: "0px" }}>
+                      <img src={item.teams.away.logo} width={30} alt="logo" />{" "}
+                    </TableCell>
+                    <TableCell align="left" sx={{ fontSize: "1rem", pt: "0px" }}>
+                      {item.teams.away.name}
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
     </Container>
   );
 }
